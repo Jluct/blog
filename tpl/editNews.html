@@ -1,0 +1,15 @@
+<div ng-repeat="article in article">
+	<div class="article">
+		<a href="#/news/{{article.news_id}}"><h3 ng-model="article.news_header">{{article.news_header}}</h3></a>
+		<span class="label label-success">{{article.news_date}}</span>
+		<p ng-model="article.news_body" ng-bind-html="$root.html(article.news_body)"></p>
+	</div>
+	<div ng-if="reply" class="alert alert-success text-center">Изменения внесены</div>
+	<div ng-if="!reply && control" class="alert alert-danger text-center">Ошибка! Попробуйте ещё раз!</div>
+	<form>
+		<input ng-model="article.news_header" type="text" class="form-control" />
+		<textarea rows="10" ng-model="article.news_body" class="form-control"></textarea>
+		<input type="submit" ng-click="editArticle(article)" class="btn btn-primary" />
+		<input type="reset" class="btn btn-danger" />
+	</form>
+</div>

@@ -1,0 +1,54 @@
+<div ng-repeat="article in article">
+    <article></article>
+</div>
+<div ng-controller="$CommentController">
+    <div ng-if="!user_data.user_status" class="alert-warning text-center">Зарегистрируйтесь, что бы добавить
+        комментарий!
+    </div>
+    <div ng-if="user_data.user_status" class="addcomment">
+        <span class="text-primary">Комментарии</span>
+
+        <textarea ng-model="newComment.text" class="form-control" placeholder="Комментарий" name="comment"></textarea>
+        <button ng-click="addComment(newComment,id)" type="button" class="btn btn-primary btn-lg btn-block">Отправить
+        </button>
+    </div>
+    <div class="comments">
+
+        <div ng-repeat="comment in comments" class="panel panel-primary">
+            <div class="panel-heading">
+                <span class="panel-title">{{comment.comment_user}}</span>
+                <span>{{comment.comment_date}}</span>
+            </div>
+            <div class="panel-body">
+                <p>{{comment.comment_text}}</p>
+            </div>
+        </div>
+
+    </div>
+        <pre>
+            {{user_data|json}}
+        </pre>
+</div>
+
+
+<!--
+<div class="panel panel-primary">
+	<div class="panel-heading">
+		<h3 class="panel-title">{{comment.comment_user}}<small>{{comment.comment_date}}</small></h3>
+	</div>
+	<div class="panel-body">
+		{{comment.comment_text}}
+	</div>
+</div>
+-->
+
+
+<!--
+<div class="list-group">
+  <a href="#" class="list-group-item active">
+    <h4 class="list-group-item-heading">{{c.comment_user}}<small>{{c.comment_date}}</small></h4>
+  </a>
+   <a href="#" class="list-group-item ">
+    <p class="list-group-item-text">{{c.comment_text}}</p>
+  </a>
+</div>-->

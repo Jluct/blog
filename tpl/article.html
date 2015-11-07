@@ -1,0 +1,7 @@
+<div class="article">
+	<a href="#/news/{{article.news_id}}">
+		<h3>{{article.news_header}}</h3>
+	</a>
+		<span class="label label-success">{{article.news_date}}</span>
+	<p ng-bind-html="$root.html(article.news_body)"></p>
+</div>

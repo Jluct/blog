@@ -1,0 +1,12 @@
+<div class="input-group search-area">
+	<div class="input-group-btn">
+		<button ng-click="searchNews(query)" type="button" class="btn btn-default ">Поиск</button>
+	</div>
+	<input type="text" ng-model="query" class="form-control" aria-label="...">
+	<span class="input-group-btn">
+        <button ng-show="visible" ng-click="reset()" class="btn btn-warning" type="button">Сброс</button>
+      </span>
+</div>
+<div ng-repeat="article in news" class="news">
+	<article></article>
+</div>

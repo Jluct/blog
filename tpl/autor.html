@@ -1,0 +1,19 @@
+<div class="autorization text-center">
+    <form class="form-horizontal">
+        <div class="form-group">
+            <label class=" control-label">Логин</label>
+
+            <div>
+                <input ng-model="data.login" class="form-control" id="Login" placeholder="Логин">
+            </div>
+
+            <label class=" control-label">Пароль</label>
+
+            <div>
+                <input type="password" ng-model="data.password" class="form-control" id="password" placeholder="Пароль">
+            </div>
+            <input type="submit" ng-click="authorization(data)" class="btn btn-block btn-lg btn-success"/>
+            <button class="btn btn-block btn-lg btn-info">Забыл пароль</button>
+        </div>
+    </form>
+</div>
